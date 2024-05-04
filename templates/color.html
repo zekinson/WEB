@@ -1,0 +1,28 @@
+{% extends "pattern.html" %}
+
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/color.css') }}">
+<style>
+  body {
+    background-color: {{ color }};
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="text-bg-light p-3"><h1>Рандомайзер цветов</h1><h2>Ваш цвет: {{ color }}</h2>
+    <button class="btn btn-primary" onclick="copyToClipboard('{{ color }}')">Скопировать цвет</button>
+    </div>
+    <a href="http://127.0.0.1:8080/random/color" class="btn btn-primary">Сгенерировать новый цвет</a>
+    <a href="http://127.0.0.1:8080/greeting" class="btn btn-primary">Перейти на стартовую страницу</a>
+
+<script>
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(function() {
+    alert("Цвет скопирован в буфер обмена!");
+  }, function(err) {
+    alert("Не удалось скопировать цвет в буфер обмена: " + err);
+  });
+}
+</script>
+{% endblock %}

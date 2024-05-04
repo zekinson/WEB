@@ -1,0 +1,15 @@
+{% extends "pattern.html" %}
+
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_select.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div>
+        <form class="login_form">
+            <h1>Рандомайзер цветов</h1>
+            <h2>Создаёт случайный цвет HEX</h2>
+            <a href="http://127.0.0.1:8080/random/color" class="btn btn-primary">Перейти к рандомайзеру цвета</a>
+        </form>
+    </div>
+{% endblock %}
