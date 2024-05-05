@@ -1,0 +1,19 @@
+{% extends "pattern.html" %}
+
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/btn.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="text-bg-light p-3"><h1>Рандомайзер числа</h1><h2>Ваше число: {{ number }}</h2>
+        <form class="login_form" method="post">
+            <label for="number-min">Введите минимальное число (от 1 до 1000000):</label>
+    <input type="number" name="number_min" class="form-control" id="number-min" min="1" max="1000000" value="{{ value_min }}" required>
+            <label for="number-max">Введите максимальное число (от 1 до 1000000):</label>
+    <input type="number" name="number_max" class="form-control" id="number-max" min="1" max="1000000" value="{{ value_max }}" required>
+    <button type="submit" class="btn btn-primary">Сгенерировать новое число пароль</button>
+</form>
+    </div>
+    <a href="http://127.0.0.1:8080/greeting" class="btn btn-primary">Перейти на стартовую страницу</a>
+
+{% endblock %}
